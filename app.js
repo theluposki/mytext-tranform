@@ -14,6 +14,12 @@ createApp({
     downloadContent(){
         window.location.href = 'data:application/octet-stream;charset=utf-8,' + encodeURIComponent(this.newText)
     },
+    async pasteClip(){
+      this.text = await navigator.clipboard.readText()
+    },
+    clearText(){
+      this.text = ''
+    },
     copyClip() {
       const copyText = document.getElementById("newText");   
       copyText.select();

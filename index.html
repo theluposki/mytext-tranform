@@ -29,8 +29,11 @@
                 <button @click="textModiTree()">textModiTree</button>
               </div>
               <textarea v-model="text"></textarea>
-              <div class="btn-paste" @click="">
+              <div class="btn-paste" @click="pasteClip()">
                 <img src="assets/icons/clipbord.svg" alt="paste">
+              </div>
+              <div class="btn-clear" @click="clearText()">
+                <img src="assets/icons/clear.svg" alt="clear">
               </div>
             </section>
             <section class="section-02">
