@@ -1,0 +1,366 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shizuru&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-IBM: "IBM Plex Sans Condensed", sans-serif;
+  --font-Roboto: "Roboto", sans-serif;
+  --font-Shizuru: "Shizuru", cursive;
+
+  --color-white: #eef4ff;
+  --color-dark: #222222;
+
+  --color-blue-ligth: #dde8ff;
+  --color-blue: rgba(45, 116, 213, 1);
+  --color-yellow: rgba(255, 209, 67, 1);
+
+  --shadow-text: 0px 0px 1px #222222;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-IBM);
+  background-color: var(--color-blue-ligth);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 1044px;
+  height: 90vh;
+  border-radius: 25px;
+  padding: 20px;
+
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(37, 145, 251, 0.98) 0.1%,
+    rgba(0, 7, 128, 1) 99.8%
+  );
+
+  box-shadow: 0px 20px 10px var(--color-dark);
+  display: flex;
+  flex-direction: column;
+}
+
+.logo h1 {
+  text-align: center;
+  margin: 5px;
+  font-size: 66px;
+  color: var(--color-yellow);
+  text-shadow: -30px -20px 50px var(--color-dark);
+  font-family: var(--font-Shizuru);
+}
+
+article {
+  flex: 1;
+  background-color: var(--color-white);
+  border-radius: 12px;
+
+  display: flex;
+  overflow: hidden;
+}
+
+.section-01 {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px 0px 0px 12px;
+
+  position: relative;
+}
+
+.section-01 textarea {
+  flex: 1;
+  padding: 20px;
+  border-radius: 3px;
+}
+
+.options button {
+  width: 1fr;
+  height: 30px;
+  padding: 0px 15px;
+  font-weight: 600;
+  color: var(--color-white);
+  background-color: var(--color-dark);
+  border: solid 1px var(--color-dark);
+  border-radius: 3px;
+  box-shadow: 0px 0px 3px var(--color-dark);
+  margin-right: 15px;
+  margin-bottom: 10px;
+  transition: all 0.4s;
+  user-select: none;
+  cursor: pointer;
+}
+
+.options button:hover {
+  box-shadow: inset 0px -1px 3px var(--color-blue);
+  border: solid 1px var(--color-blue);
+  transition: all 0.4s;
+}
+
+.options button:active {
+  box-shadow: inset 0px 0px 18px var(--color-white);
+  border: solid 3px var(--color-blue-ligth);
+  transition: all 0.1s;
+}
+
+.section-02 {
+  flex: 1;
+  background-color: var(--color-dark);
+  border: solid 2px var(--color-dark);
+  box-shadow: inset 0px 0px 2px var(--color-dark);
+  position: relative;
+
+  color: var(--color-white);
+  font-family: var(--font-Roboto);
+  line-height: 1.5rem;
+  border-radius: 0px 12px 12px 0px;
+
+  padding: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.section-02 textarea {
+  background-color: var(--color-dark);
+  position: relative;
+  flex: 1;
+
+  color: var(--color-white);
+  font-family: var(--font-Roboto);
+  line-height: 1.5rem;
+
+  border-radius: 3px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.btn-paste {
+  width: 40px;
+  height: 40px;
+
+  background-image: linear-gradient(
+    134.6deg,
+    rgba(201, 37, 107, 1) 15.4%,
+    rgba(116, 16, 124, 1) 74.7%
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  position: absolute;
+  bottom: 28px;
+  right: 28px;
+
+  border: solid 1px var(--color-dark);
+  box-shadow: 0px 0px 50px rgba(255, 209, 67, 1);
+
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.btn-paste:hover {
+  transform: scale(1.2);
+  transition: all 0.4s;
+  background-color: violet;
+  border: solid 2px var(--color-blue);
+}
+
+.btn-paste:active {
+  transition: all 0.2s;
+  transform: scale(1.2);
+  box-shadow: inset 0px 0px 23px violet;
+  background-color: var(--color-dark);
+}
+
+.btn-copy {
+  width: 40px;
+  height: 40px;
+
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(255, 209, 67, 1) 0%,
+    rgba(255, 145, 83, 1) 90%
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  position: absolute;
+  bottom: 28px;
+  right: 28px;
+
+  border: solid 1px var(--color-dark);
+  box-shadow: 0px 0px 50px rgba(255, 209, 67, 1);
+
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.btn-copy:hover {
+  transform: scale(1.2);
+  transition: all 0.4s;
+  background-color: violet;
+  border: solid 2px var(--color-blue);
+}
+
+.btn-copy:active {
+  transition: all 0.2s;
+  transform: scale(1.2);
+  box-shadow: inset 0px 0px 23px violet;
+  background-color: var(--color-dark);
+}
+
+.btn-download {
+  width: 40px;
+  height: 40px;
+
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(45, 116, 213, 1) 11.2%,
+    rgba(121, 137, 212, 1) 91.2%
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+
+  border: solid 1px var(--color-dark);
+  box-shadow: 0px 0px 50px rgba(45, 116, 213, 1);
+
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.btn-download:hover {
+  transform: scale(1.2);
+  transition: all 0.4s;
+  background-color: violet;
+  border: solid 2px var(--color-blue);
+}
+
+.btn-download:active {
+  transition: all 0.2s;
+  transform: scale(1.2);
+  box-shadow: inset 0px 0px 23px violet;
+  background-color: var(--color-dark);
+}
+
+@media only screen and (max-width: 600px) {
+  #app {
+    width: 100vw;
+    height: 100vh;
+    font-family: var(--font-IBM);
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border-radius: 3px;
+  }
+
+  .logo h1 {
+    margin: 10px;
+    font-size: 36px;
+    text-shadow: 0px 0px 3px var(--color-dark);
+  }
+
+  article {
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .section-01 {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .section-01 textarea {
+    flex: 1;
+    padding: 20px;
+    border-radius: 3px;
+    font-size: 18px;
+  }
+
+  .section-02 {
+    border-radius: 3px;
+  }
+
+  .section-02 textarea {
+    font-size: 18px;
+  }
+
+  .options {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      overflow-x: auto;
+      height: 40px;
+  }
+  .options button {
+    width: 33.33333%;
+    max-width: 33.33333%;
+    height: 25px;
+    padding: 0px 15px;
+    font-weight: 600;
+    color: var(--color-white);
+    background-color: var(--color-dark);
+    border: solid 1px var(--color-dark);
+    border-radius: 3px;
+    box-shadow: 0px 0px 3px var(--color-dark);
+
+    margin-right: 10px;
+    margin-bottom: 0px;
+
+    transition: all 0.4s;
+    user-select: none;
+    cursor: pointer;
+  }
+
+
+  .btn-paste {
+    position: absolute;
+    bottom: 80px;
+    left: 28px;
+  }
+}

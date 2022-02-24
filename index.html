@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+        <div class="container">
+          <header>
+            <div class="logo">
+              <h1>{{ message }}</h1>
+            </div>
+          </header>
+
+          <article>
+            <section class="section-01">
+              <div class="options">
+                <button @click="upperCase()">UperCase</button>
+                <button @click="lowerCase()">LowerCase</button>
+                <button @click="reversetext()">Reverse</button>
+                <button @click="capitalize()">Capitalize</button>
+                <button @click="textModiOne()">textModiOne</button>
+                <button @click="textModiTwo()">textModiTwo</button>
+                <button @click="textModiTree()">textModiTree</button>
+              </div>
+              <textarea v-model="text"></textarea>
+              <div class="btn-paste" @click="">
+                <img src="assets/icons/clipbord.svg" alt="paste">
+              </div>
+            </section>
+            <section class="section-02">
+              <textarea id="newText" v-model="newText">
+                
+              </textarea>
+              <div class="btn-copy" @click="copyClip()">
+                <img src="assets/icons/copy.svg" alt="copy">
+              </div>
+              <div class="btn-download" @click="downloadContent()">
+                <img src="assets/icons/download.svg" alt="copy">
+              </div>
+            </section>
+          </article>
+        </div>
+    </div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+      }
+    </script>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
